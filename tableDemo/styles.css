@@ -1,0 +1,213 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+body {
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* 通用滚动条隐藏样式 */
+.scroll-hide {
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+}
+
+.scroll-hide::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+  /* Chrome, Safari, Opera */
+}
+
+.table-container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  position: relative;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  overflow: hidden;
+  height: 300px;
+  max-height: 300px;
+}
+
+/* 固定列共同样式 */
+.fixed-column {
+  width: 80px;
+  flex-shrink: 0;
+  background-color: #f0f0f0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* 左侧固定列样式 */
+.left-fixed {
+  border-right: 2px solid #ddd;
+}
+
+/* 右侧固定列样式 */
+.right-fixed {
+  border-left: 2px solid #ddd;
+}
+
+/* 根据滚动状态动态添加的阴影类 */
+.left-shadow {
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.right-shadow {
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* 表头底部阴影 */
+.bottom-shadow {
+  box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.15);
+}
+
+.fixed-header {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  background-color: #e6e6e6;
+  border-bottom: 1px solid #ddd;
+  font-size: 14px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.fixed-body {
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.fixed-body .row {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #ddd;
+  color: #555;
+}
+
+/* 可滚动部分样式 */
+.scrollable-part {
+  flex-grow: 1;
+  overflow: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.table-header-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 15;
+  background-color: #e6e6e6;
+  flex-shrink: 0;
+}
+
+.table-header {
+  display: flex;
+  height: 50px;
+  background-color: #e6e6e6;
+  /* border-bottom: 1px solid #ddd; */
+  position: relative;
+}
+
+.header-cell {
+  flex: 1;
+  min-width: 120px;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 14px;
+  border-right: 1px solid #ddd;
+  background-color: #e6e6e6;
+}
+
+.table-body {
+  flex-grow: 1;
+}
+
+.table-row {
+  display: flex;
+  border-bottom: 1px solid #ddd;
+  height: 50px;
+}
+
+.cell {
+  flex: 1;
+  min-width: 120px;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid #ddd;
+  font-size: 14px;
+  color: #333;
+  max-width: 120px;
+  padding: 0 15px;
+  overflow: hidden;
+  word-break: break-all;
+}
+
+/* 奇数行和偶数行的背景色差异 */
+.table-row:nth-child(odd) {
+  background-color: #fafafa;
+}
+
+.table-row:nth-child(even) {
+  background-color: #fff;
+}
+
+/* 悬停效果 */
+.fixed-body .row.hovered,
+.table-row.hovered {
+  background-color: #e6f7ff !important;
+  transition: background-color 0.2s;
+}
+
+/* 响应式调整 */
+@media screen and (max-width: 768px) {
+  .table-container {
+    width: 100%;
+    height: 400px;
+  }
+
+  .fixed-column {
+    width: 60px;
+  }
+
+  .header-cell,
+  .cell {
+    min-width: 100px;
+    padding: 0 10px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+}

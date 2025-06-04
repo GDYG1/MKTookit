@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自实现固定列 Demo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>自实现固定列表格 Demo</h1>
+    
+    <div class="table-container">
+        <!-- 左侧固定列 -->
+        <div class="fixed-column left-fixed">
+            <div class="fixed-header">序号</div>
+            <div class="fixed-body scroll-hide">
+                <div class="row">1</div>
+                <div class="row">2</div>
+                <div class="row">3</div>
+                <div class="row">4</div>
+                <div class="row">5</div>
+                <div class="row">6</div>
+                <div class="row">7</div>
+                <div class="row">8</div>
+                <div class="row">9</div>
+                <div class="row">10</div>
+                <div class="row">11</div>
+                <div class="row">12</div>
+                <div class="row">13</div>
+                <div class="row">14</div>
+                <div class="row">15</div>
+            </div>
+        </div>
+        
+        <!-- 可滚动部分 -->
+        <div class="scrollable-part scroll-hide">
+            <div class="table-header-wrapper">
+                <div class="table-header">
+                    <div class="header-cell">姓名</div>
+                    <div class="header-cell">年龄</div>
+                    <div class="header-cell">职业</div>
+                    <div class="header-cell">城市</div>
+                    <div class="header-cell">电话</div>
+                    <div class="header-cell">邮箱</div>
+                    <div class="header-cell">爱好</div>
+                    <div class="header-cell">学历</div>
+                </div>
+            </div>
+            
+            <div class="table-body">
+                <div class="table-row">
+                    <div class="cell">张三</div>
+                    <div class="cell">28</div>
+                    <div class="cell">软件工程师</div>
+                    <div class="cell">北京</div>
+                    <div class="cell">13800138000</div>
+                    <div class="cell">zhangsan@example.com</div>
+                    <div class="cell">读书、旅行</div>
+                    <div class="cell">本科</div>
+                </div>
+                <div class="table-row">
+                    <div class="cell">李四</div>
+                    <div class="cell">32</div>
+                    <div class="cell">产品经理</div>
+                    <div class="cell">上海</div>
+                    <div class="cell">13900139000</div>
+                    <div class="cell">lisi@example.com</div>
+                    <div class="cell">游泳、摄影</div>
+                    <div class="cell">硕士</div>
+                </div>
+                <div class="table-row">
+                    <div class="cell">王五</div>
+                    <div class="cell">25</div>
+                    <div class="cell">UI设计师</div>
+                    <div class="cell">广州</div>
+                    <div class="cell">13700137000</div>
+                    <div class="cell">wangwu@example.com</div>
+                    <div class="cell">绘画、音乐</div>
+                    <div class="cell">本科</div>
+                </div>
+                <div class="table-row">
+                    <div class="cell">赵六</div>
+                    <div class="cell">35</div>
+                    <div class="cell">数据分析师</div>
+                    <div class="cell">深圳</div>
+                    <div class="cell">13600136000</div>
+                    <div class="cell">zhaoliu@example.com</div>
+                    <div class="cell">篮球、编程</div>
+                    <div class="cell">博士</div>
+                </div>
+                <div class="table-row">
+                    <div class="cell">钱七</div>
+                    <div class="cell">29</div>
+                    <div class="cell">市场营销</div>
+                    <div class="cell">成都</div>
+                    <div class="cell">13500135000</div>
+                    <div class="cell">qianqi@example.com</div>
+                    <div class="cell">徒步、烹饪</div>
+                    <div class="cell">本科</div>
+                </div>
+                <div class="table-row">
+                    <div class="cell">孙八</div>
+                    <div class="cell">27</div>
+                    <div class="cell">前端开发</div>
+                    <div class="cell">杭州</div>
+                    <div class="cell">13400134000</div>
+                    <div class="cell">sunba@example.com</div>
+                    <div class="cell">健身、游戏</div>
+                    <div class="cell">本科</div>
+                </div>
+                <div class="table-row">
+                    <div class="cell">周九</div>
+                    <div class="cell">31</div>
+                    <div class="cell">后端开发</div>
+                    <div class="cell">武汉</div>
+                    <div class="cell">13300133000</div>
+                    <div class="cell">zhoujiu@example.com</div>
+                    <div class="cell">骑行、电影</div>
+                    <div class="cell">硕士</div>
+                </div>
+                <div class="table-row">
+                    <div class="cell">吴十</div>
+                    <div class="cell">33</div>
+                    <div class="cell">运维工程师</div>
+                    <div class="cell">南京</div>
+                    <div class="cell">13200132000</div>
+                    <div class="cell">wushi@example.com</div>
+                    <div class="cell">钓鱼、棋牌</div>
+                    <div class="cell">本科</div>
+                </div>
+                <div class="table-row">
+                    <div class="cell">郑十一</div>
+                    <div class="cell">26</div>
+                    <div class="cell">测试工程师</div>
+                    <div class="cell">西安</div>
+                    <div class="cell">13100131000</div>
+                    <div class="cell">zheng11@example.com</div>
+                    <div class="cell">摄影、唱歌</div>
+                    <div class="cell">大专</div>
+                </div>
+                <div class="table-row">
+                    <div class="cell">王十二</div>
+                    <div class="cell">34</div>
+                    <div class="cell">项目经理</div>
+                    <div class="cell">天津</div>
+                    <div class="cell">13000130000</div>
+                    <div class="cell">wang12@example.com</div>
+                    <div class="cell">足球、阅读</div>
+                    <div class="cell">硕士</div>
+                </div>
+                <div class="table-row">
+                    <div class="cell">刘十三</div>
+                    <div class="cell">30</div>
+                    <div class="cell">网络工程师</div>
+                    <div class="cell">重庆</div>
+                    <div class="cell">15800158000</div>
+                    <div class="cell">liu13@example.com</div>
+                    <div class="cell">远足、摄影</div>
+                    <div class="cell">本科</div>
+                </div>
+                <div class="table-row">
+                    <div class="cell">陈十四</div>
+                    <div class="cell">29</div>
+                    <div class="cell">系统架构师</div>
+                    <div class="cell">苏州</div>
+                    <div class="cell">15900159000</div>
+                    <div class="cell">chen14@example.com</div>
+                    <div class="cell">编程、电子游戏</div>
+                    <div class="cell">硕士</div>
+                </div>
+                <div class="table-row">
+                    <div class="cell">杨十五</div>
+                    <div class="cell">35</div>
+                    <div class="cell">人力资源</div>
+                    <div class="cell">济南</div>
+                    <div class="cell">15700157000</div>
+                    <div class="cell">yang15@example.com</div>
+                    <div class="cell">瑜伽、舞蹈</div>
+                    <div class="cell">本科</div>
+                </div>
+                <div class="table-row">
+                    <div class="cell">张十六</div>
+                    <div class="cell">28</div>
+                    <div class="cell">财务分析</div>
+                    <div class="cell">青岛</div>
+                    <div class="cell">15600156000</div>
+                    <div class="cell">zhang16@example.com</div>
+                    <div class="cell">书法、插花</div>
+                    <div class="cell">本科</div>
+                </div>
+                <div class="table-row">
+                    <div class="cell">黄十七</div>
+                    <div class="cell">32</div>
+                    <div class="cell">销售经理</div>
+                    <div class="cell">大连</div>
+                    <div class="cell">15500155000</div>
+                    <div class="cell">huang17@example.com</div>
+                    <div class="cell">高尔夫、游泳</div>
+                    <div class="cell">硕士</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 右侧固定列 -->
+        <div class="fixed-column right-fixed">
+            <div class="fixed-header">操作</div>
+            <div class="fixed-body scroll-hide">
+                <div class="row">编辑</div>
+                <div class="row">编辑</div>
+                <div class="row">编辑</div>
+                <div class="row">编辑</div>
+                <div class="row">编辑</div>
+                <div class="row">编辑</div>
+                <div class="row">编辑</div>
+                <div class="row">编辑</div>
+                <div class="row">编辑</div>
+                <div class="row">编辑</div>
+                <div class="row">编辑</div>
+                <div class="row">编辑</div>
+                <div class="row">编辑</div>
+                <div class="row">编辑</div>
+                <div class="row">编辑</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
